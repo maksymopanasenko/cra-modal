@@ -1,0 +1,57 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(41, 39, 39, 0.804);
+    .modal {
+        max-width: 520px;
+        background-color: #e94b35;
+        border-radius: 5px;
+        color: #fff;
+        padding-bottom: 20px;
+        animation: popup 0.5s ease-in-out;
+        position: relative;
+        &__header {
+            position: relative;
+            font-size: 22px;
+            background-color: #d64531;
+            padding: 15px;
+            margin: 0;
+        }
+        &__text {
+            padding: 0 20px;
+            line-height: 2;
+        }
+        &__actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn {
+            color: #fff;
+            background-color: #b53726;
+            border: none;
+            border-radius: 5px;
+            width: 100px;
+            height: 40px;
+            cursor: pointer;
+        }
+        
+        .close__btn {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            z-index: 5;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}  

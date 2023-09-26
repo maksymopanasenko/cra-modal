@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import Button from './components/Button/Button';
+import Modal from './components/Modal/Modal';
+import ActionButtons from './components/ActionButtons/ActionButtons';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button
+        backgroundColor="#5d2fb0"
+        text="Open first modal"
+        onClick={() => console.log('click')}
+      />
+
+      <Modal 
+        header='Do you want to delete this file?'
+        text='Once you delete this file, it won’t be possible to undo this action. Are you sure you want to delete it?'
+        closeButton
+        onCloseModal={() => console.log('close')}
+        actions={<ActionButtons confirmBtn="Ok" closeBtn="Cancel"/>}>
+      </Modal>
     </div>
   );
 }
