@@ -4,7 +4,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: rgba(41, 39, 39, 0.804);
@@ -27,16 +27,8 @@
             padding: 0 20px;
             line-height: 2;
         }
-        &__actions {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
         .btn {
-            color: #fff;
-            background-color: #b53726;
-            border: none;
-            border-radius: 5px;
+            box-shadow: none;
             width: 100px;
             height: 40px;
             cursor: pointer;
@@ -55,3 +47,7 @@
         }
     }
 }  
+
+.show {
+    display: flex;
+}

@@ -2,22 +2,39 @@ import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 import ActionButtons from './components/ActionButtons/ActionButtons';
 import './App.css';
+import { useState } from 'react';
+import { modalData } from './dataBase';
 
 function App() {
+  const [modal, setModal] = useState({});
+
+  const handleToggleFirstModal = () => setModal(modalData.firstModal);
+
+  const handleToggleSecondModal = () => setModal(modalData.secondModal);
+
+  const handleCloseModal = () => setModal({...modal, closeButton: false});
+
   return (
     <div className="App">
-      <Button
-        backgroundColor="#5d2fb0"
-        text="Open first modal"
-        onClick={() => console.log('click')}
-      />
+      <div className='main__btns'>
+        <Button
+            backgroundColor="#5d2fb0"
+            text="Open first modal"
+            onClick={handleToggleFirstModal}
+        />
+        <Button
+            backgroundColor="#5d2fb0"
+            text="Open second modal"
+            onClick={handleToggleSecondModal}
+        />
+      </div>
 
       <Modal 
-        header='Do you want to delete this file?'
-        text='Once you delete this file, it won’t be possible to undo this action. Are you sure you want to delete it?'
-        closeButton
-        onCloseModal={() => console.log('close')}
-        actions={<ActionButtons confirmBtn="Ok" closeBtn="Cancel"/>}>
+        header={modal.header}
+        text={modal.text}
+        closeButton={modal.closeButton}
+        onCloseModal={handleCloseModal}
+        actions={<ActionButtons confirmBtn="Ok" closeBtn="Cancel" backgroundColor={modal.backgroundColor}/>}>
       </Modal>
     </div>
   );
