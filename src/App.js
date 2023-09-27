@@ -34,7 +34,7 @@ function App() {
         text={modal.text}
         closeButton={modal.closeButton}
         onCloseModal={handleCloseModal}
-        actions={<ActionButtons confirmBtn="Ok" closeBtn="Cancel" backgroundColor={modal.backgroundColor}/>}>
+        actions={<ActionButtons confirmBtn={modal.btns?.first} closeBtn={modal.btns?.second} backgroundColor={modal.backgroundColor}/>}>
       </Modal>
     </div>
   );
